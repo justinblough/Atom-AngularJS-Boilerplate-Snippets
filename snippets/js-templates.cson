@@ -80,7 +80,7 @@
 
         ${2:factory}.$inject = [${3:'$http'}]
 
-        function ${2:DataService}(${3:$http}){
+        function ${2:factory}(${3:$http}){
 
           var service = {
             ${4:getIndex}: ${4:getIndex}
@@ -109,8 +109,6 @@
           .service('${2:dataService}', ${2:dataService});
 
         ${2:DataService}.$inject = [${3:'$http'}]
-
-        //////////////////
 
         function ${2:dataService}(${3:$http}){
 
