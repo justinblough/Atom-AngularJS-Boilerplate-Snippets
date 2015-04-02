@@ -15,10 +15,10 @@ Based on John Papa's guides, and Jason Miazga's Atom snippets.
 
 **Console**
 ```
-apm install angularjs-template-snippets
+apm install angularjs-boilerplate-snippets
 ```
 **Atom Editor**  
-Go to Atom > Preferences... then search for "AngularJS Template Snippets" in the Packages tab.
+Go to Atom > Preferences... then search for "AngularJS Boilerplate Snippets" in the Packages tab.
 
 ## Snippets
 
