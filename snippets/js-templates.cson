@@ -1,0 +1,201 @@
+".source.js":
+  "Angular App Module":
+    "prefix": "angapp"
+    "body":"""
+      (function() {
+        'use strict';
+
+        angular.module('${1:app}', [
+          // Angular modules
+          $1
+          // Reusable cross app code modules
+          $2
+          // 3rd Party modules
+          $3
+        ]);
+
+      })();
+    """
+
+  "Angular Module":
+    "prefix": "angmod"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular.module('${1:module}', [$2]);
+
+      })();
+    """
+  "Angular Constant":
+    "prefix": "angconst"
+    "body": """
+      (function() {
+        'use strict';
+
+          angular
+              .module('${1:app}')
+              .constant('${2:myConstant}', ${3:'value'})$4;
+
+      })();
+    """
+
+  "Angular Controller":
+    "prefix": "angcon"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .controller('${2:Controller}',${2: Controller});
+
+          ${2:MyController}.$inject = [${3:'$scope'}];
+
+        function ${2:MyController}(${3:$scope}){
+
+          /*jshint validthis: true */
+          var vm = this;
+
+          activate();
+
+          function activate(){
+
+          }
+
+        }
+
+      })();
+    """
+
+  "Angular Factory":
+    "prefix": "angfact"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .factory('${2:factory}', ${2:factory});
+
+        ${2:factory}.$inject = [${3:'$http'}]
+
+        function ${2:DataService}(${3:$http}){
+
+          var service = {
+            ${4:getIndex}: ${4:getIndex}
+          };
+
+          return service;
+
+          function ${4:getIndex}(){
+            $5
+          }
+
+        }
+
+      })();
+    """
+
+
+  "Angular Service":
+    "prefix": "angserv"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .service('${2:dataService}', ${2:dataService});
+
+        ${2:DataService}.$inject = [${3:'$http'}]
+
+        //////////////////
+
+        function ${2:dataService}(${3:$http}){
+
+          this.${4:getIndex} = function(){
+            $5
+          }
+
+        }
+
+      })();
+    """
+
+  "Angular Directive":
+    "prefix": "angdir"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .directive('${2:directive}', ${2:directive});
+
+        ${2:directive}.$inject = [${3:'dataService'}]
+
+        function ${2:directive}(${3:dataService}){
+          // Usage: ...
+          var directive = {
+            restrict: '${4:ACE}',
+            templateUrl: '${4:templateUrl}',
+            scope: {
+            },
+            link: link
+          };
+          return directive;
+
+          function link(scope, element, attrs){
+
+          }
+
+        }
+
+      })();
+    """
+
+  "Angular Directive w/ Controller":
+    "prefix": "angdirc"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .directive('${2:directive}', ${2:directive});
+
+        function ${2:directive}(){
+          // Usage: ...
+          var directive = {
+            restrict: '${3:ACE}',
+            templateUrl: '${4:templateUrl}',
+            scope: {
+            },
+            link: link,
+            controller: '${5:Controller}',
+            controllerAs: 'vm',
+            bindToController: true
+          };
+          return directive;
+
+          function link(scope, element, attrs, ctrl){
+
+          }
+
+        }
+
+        ${5:Controller}.$inject = ['${6:dataService}'];
+
+        function ${5:Controller}(${6:dataService}) {
+            var vm = this;
+
+            activate();
+
+            function activate() {
+
+            }
+        }
+
+      })();
+    """
