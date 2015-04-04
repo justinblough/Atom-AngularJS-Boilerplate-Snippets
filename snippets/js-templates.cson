@@ -78,7 +78,7 @@
           .module('${1:app}')
           .factory('${2:factory}', ${2:factory});
 
-        ${2:factory}.$inject = [${3:'$http'}]
+        ${2:factory}.$inject = [${3:'$http'}];
 
         function ${2:factory}(${3:$http}){
 
@@ -108,7 +108,7 @@
           .module('${1:app}')
           .service('${2:dataService}', ${2:dataService});
 
-        ${2:DataService}.$inject = [${3:'$http'}]
+        ${2:DataService}.$inject = [${3:'$http'}];
 
         function ${2:dataService}(${3:$http}){
 
@@ -131,7 +131,7 @@
           .module('${1:app}')
           .directive('${2:directive}', ${2:directive});
 
-        ${2:directive}.$inject = [${3:'dataService'}]
+        ${2:directive}.$inject = [${3:'dataService'}];
 
         function ${2:directive}(${3:dataService}){
           // Usage: ...
