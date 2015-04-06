@@ -134,7 +134,7 @@ Type a prefix and press `tab`, and the snippet will replace it.
     .module('${1:app}')
     .directive('${2:directive}', ${2:directive});
 
-  ${2:directive}.$inject = [${3:'dataService'}]
+  ${2:directive}.$inject = [${3:'dataService'}];
 
   function ${2:directive}(${3:dataService}){
     // Usage: ...
@@ -209,7 +209,7 @@ Type a prefix and press `tab`, and the snippet will replace it.
     .module('${1:app}')
     .factory('${2:factory}', ${2:factory});
 
-  ${2:factory}.$inject = [${3:'$http'}]
+  ${2:factory}.$inject = [${3:'$http'}];
 
   function ${2:DataService}(${3:$http}){
 
@@ -247,7 +247,7 @@ Type a prefix and press `tab`, and the snippet will replace it.
     .module('${1:app}')
     .service('${2:dataService}', ${2:dataService});
 
-  ${2:DataService}.$inject = [${3:'$http'}]
+  ${2:DataService}.$inject = [${3:'$http'}];
 
   //////////////////
 
