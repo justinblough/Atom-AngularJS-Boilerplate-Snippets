@@ -1,6 +1,6 @@
 {
   "name": "angularjs-boilerplate-snippets",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "main": "./lib/angularjs-boilerplate-snippets.coffee",
   "description": "Adds AngularJS boilerplate snippets from best practices for single responsibility in Atom.",
   "repository": "https://github.com/justinblough/Atom-AngularJS-Boilerplate-Snippets",
