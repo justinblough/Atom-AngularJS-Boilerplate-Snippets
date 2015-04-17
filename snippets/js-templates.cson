@@ -97,6 +97,59 @@
       })();
     """
 
+  "Angular Filter Ng-Repeat":
+    "prefix": "angfiltng"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .fiter('${2:filter}', ${2:filter});
+
+        ${2:filter}.$inject = [${3:'$dataService'}];
+
+        function ${2:filter}(${3:dataService}){
+
+          return function(${4:obj},${6:val}){
+            var filtered = [];
+              angular.forEach(${4:obj}, function(${5:item}) {
+                if(${5:item} == ${6:val}){
+                  filtered.push(${5:item});
+                }
+              });
+            return filtered;
+          };
+        }
+
+      })();
+    """
+
+  "Angular Filter":
+    "prefix": "angfilt"
+    "body": """
+      (function() {
+        'use strict';
+
+        angular
+          .module('${1:app}')
+          .fiter('${2:filter}', ${2:filter});
+
+        ${2:filter}.$inject = [${3:'$dataService'}];
+
+        function ${2:filter}(${3:dataService}){
+
+          return function(${4:val}){
+
+            $5
+
+            return ${4:val}};
+
+          };
+        }
+
+      })();
+    """
 
   "Angular Service":
     "prefix": "angserv"

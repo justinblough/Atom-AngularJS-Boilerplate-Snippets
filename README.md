@@ -9,7 +9,7 @@ Based on John Papa's guides, and Jason Miazga's Atom snippets.
 - AngularJS template snippets from best practices
 - Utilizes SOLID principles for Rule of 1, and readability.
 - HTML index boilerplate snippet
-- JS boilerplate snippets for app module, controller, constant, directive, directive with controller, factory, custom module, service
+- JS boilerplate snippets for app module, controller, constant, filter, filter ng-repeat, directive, directive with controller, factory, custom module, service
 
 ## Install
 
@@ -36,6 +36,8 @@ Type a prefix and press `tab`, and the snippet will replace it.
 - `angdir` - Directive
 - `angdir` - Directive w/ Controller
 - `angfact` - Factory
+- `angfilt` - Filter
+- `angfiltng` - Filter Ng-Repeat
 - `angmod` - Custom Module
 - `angser` - Service
 
@@ -223,6 +225,58 @@ Type a prefix and press `tab`, and the snippet will replace it.
       $5
     }
 
+  }
+
+})();
+```
+
+### angfilt
+```js
+(function() {
+  'use strict';
+
+  angular
+    .module('${1:app}')
+    .fiter('${2:filter}', ${2:filter});
+
+  ${2:filter}.$inject = [${3:'$dataService'}];
+
+  function ${2:filter}(${3:dataService}){
+
+    return function(${4:val}){
+
+      $5
+
+      return ${4:val}};
+
+    };
+  }
+
+})();
+```
+
+### angfiltng
+```js
+(function() {
+  'use strict';
+
+  angular
+    .module('${1:app}')
+    .fiter('${2:filter}', ${2:filter});
+
+  ${2:filter}.$inject = [${3:'$dataService'}];
+
+  function ${2:filter}(${3:dataService}){
+
+    return function(${4:obj},${6:val}){
+      var filtered = [];
+        angular.forEach(${4:obj}, function(${5:item}) {
+          if(${5:item} == ${6:val}){
+            filtered.push(${5:item});
+          }
+        });
+      return filtered;
+    };
   }
 
 })();
