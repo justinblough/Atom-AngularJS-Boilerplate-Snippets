@@ -77,12 +77,7 @@ Type a prefix and press `tab`, and the snippet will replace it.
   'use strict';
 
   angular.module('${1:app}', [
-    // Angular modules
-    $1
-    // Reusable cross app code modules
     $2
-    // 3rd Party modules
-    $3
   ]);
 
 })();
@@ -95,7 +90,7 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .controller('${2:Controller}',${2: Controller});
+    .controller('${2:MyController}',${2: MyController});
 
     ${2:MyController}.$inject = [${3:'$scope'}];
 
@@ -106,8 +101,10 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
     activate();
 
-    function activate(){
+    ////////////////////////////
 
+    function activate(){
+      $4
     }
 
   }
@@ -134,23 +131,25 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .directive('${2:directive}', ${2:directive});
+    .directive('${2:myDirective}', ${2:myDirective});
 
-  ${2:directive}.$inject = [${3:'dataService'}];
+  ${2:myDirective}.$inject = [${3:'dataservice'}];
 
-  function ${2:directive}(${3:dataService}){
+  function ${2:myDirective}(${3:dataservice}){
     // Usage: ...
     var directive = {
       restrict: '${4:ACE}',
-      templateUrl: '${4:templateUrl}',
+      templateUrl: '${5:templateUrl}',
       scope: {
       },
       link: link
     };
     return directive;
 
-    function link(scope, element, attrs){
+    ////////////////////////////
 
+    function link(scope, element, attrs){
+      $6
     }
 
   }
@@ -165,38 +164,28 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .directive('${2:directive}', ${2:directive});
+    .directive('${2:myDirective}', ${2:myDirective});
 
-  function ${2:directive}(){
-    // Usage: ...
+  function ${2:myDirective}(){
+
     var directive = {
       restrict: '${3:ACE}',
       templateUrl: '${4:templateUrl}',
       scope: {
       },
       link: link,
-      controller: '${5:Controller}',
+      controller: '${5:myController}',
       controllerAs: 'vm',
       bindToController: true
     };
     return directive;
 
-    function link(scope, element, attrs, ctrl){
+    ////////////////////////////
 
+    function link(scope, element, attrs, vm){
+      $6
     }
 
-  }
-
-  ${5:Controller}.$inject = ['${6:dataService}'];
-
-  function ${5:Controller}(${6:dataService}) {
-      var vm = this;
-
-      activate();
-
-      function activate() {
-
-      }
   }
 
 })();
@@ -209,17 +198,19 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .factory('${2:factory}', ${2:factory});
+    .factory('${2:myfactory}', ${2:myfactory});
 
-  ${2:factory}.$inject = [${3:'$http'}];
+  ${2:myfactory}.$inject = [${3:'$http'}];
 
-  function ${2:DataService}(${3:$http}){
+  function ${2:myfactory}(${3:$http}){
 
     var service = {
       ${4:getIndex}: ${4:getIndex}
     };
 
     return service;
+
+    ////////////////////////////
 
     function ${4:getIndex}(){
       $5
@@ -237,17 +228,17 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .fiter('${2:filter}', ${2:filter});
+    .filter('${2:myFilter}', ${2:myFilter});
 
-  ${2:filter}.$inject = [${3:'$dataService'}];
+  ${2:myFilter}.$inject = [${3:'$dataservice'}];
 
-  function ${2:filter}(${3:dataService}){
+  function ${2:myFilter}(${3:dataservice}){
 
     return function(${4:val}){
 
       $5
 
-      return ${4:val}};
+      return ${4:val};
 
     };
   }
@@ -262,11 +253,11 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .fiter('${2:filter}', ${2:filter});
+    .filter('${2:myFilter}', ${2:myFilter});
 
-  ${2:filter}.$inject = [${3:'$dataService'}];
+  ${2:myFilter}.$inject = [${3:'$dataservice'}];
 
-  function ${2:filter}(${3:dataService}){
+  function ${2:myFilter}(${3:dataservice}){
 
     return function(${4:obj},${6:val}){
       var filtered = [];
@@ -299,15 +290,20 @@ Type a prefix and press `tab`, and the snippet will replace it.
 
   angular
     .module('${1:app}')
-    .service('${2:dataService}', ${2:dataService});
+    .service('${2:myservice}', ${2:myservice});
 
-  ${2:DataService}.$inject = [${3:'$http'}];
+  ${2:myservice}.$inject = [${3:'$http'}];
 
-  //////////////////
+  function ${2:myservice}(${3:$http}){
 
-  function ${2:dataService}(${3:$http}){
+    /*jshint validthis: true */
+    var svc = this;
 
-    this.${4:getIndex} = function(){
+    svc.${4:getIndex} = ${4:getIndex};
+
+    ////////////////////////////
+
+    function ${4:getIndex}(){
       $5
     }
 
